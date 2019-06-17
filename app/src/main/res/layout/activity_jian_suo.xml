@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.localtest.JianSuoActivity">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/tvwhitchjiansuo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="多文件后端匹配"
+            android:textAlignment="center"
+            android:textColor="#00ff00"
+
+            android:textSize="18sp" />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/tv_random_jiansuo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="多文件后端匹配"
+            android:textAlignment="center"
+            android:textColor="#00ff00"
+
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="80dp"
+        android:id="@+id/tvconfirmjiansuo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvtimerjiansuo"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="#0000FF" />
+
+        <TextView
+            android:id="@+id/tvtagjiansuo"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="0dp"
+            android:background="#0000FF"
+            android:text="点击开始录音"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>

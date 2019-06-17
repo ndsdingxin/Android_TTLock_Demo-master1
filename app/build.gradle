@@ -1,0 +1,136 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+        lintOptions {
+            checkReleaseBuilds false
+            abortOnError false
+        }
+    defaultConfig {
+        applicationId "com.example.ttlock"
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    //添加本地仓库，并把libs目录作为仓库地址
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    greendao {
+        schemaVersion 1
+        daoPackage 'com.example.ttlock.dao.gen'
+        targetGenDir 'src/main/java'
+    }
+
+}
+
+//指定编译的编码
+/*tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}*/
+tasks.withType(Javadoc) {
+    options.encoding = "GBK"
+}
+/*[compileJava,compileTestJava]*.options*.encoding = 'UTF-8'*/
+/*task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+}*/
+
+/*
+task androidJavadocsJar(type: Jar) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+
+artifacts {
+    archives androidSourcesJar
+    archives androidJavadocsJar
+}
+
+//编译groovy代码时采用 UTF-8
+tasks.withType(GroovyCompile) {
+    groovyOptions.encoding = "UTF-8"
+}
+//编译JAVA文件时采用UTF-8
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+*/
+
+//如果生成javadoc出现编码问题添加
+/*javadoc {
+    options{
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+        title "这里写文档标题"
+    }
+}*/
+def supportVersion = "26.1.0"
+
+dependencies {
+    provided fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    //    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile "com.android.support:appcompat-v7:${supportVersion}"
+    compile "com.android.support:design:${supportVersion}"
+    compile "com.android.support:percent:${supportVersion}"
+    //ttlock SDK
+    compile(name: 'ttlock-sdk-2.0', ext: 'aar')
+    compile(name: 'ttlock-gateway-sdk-2.0', ext: 'aar')
+    //greenDao
+    // This is only needed if you want to use encrypted databases
+    //okhttp
+    //TODO:gson
+    compile project(path: ':pickerview')
+    //    compile 'com.android.support:appcompat-v7:25.1.0'
+    //    compile 'com.android.support:design:25.1.0'
+    implementation 'org.greenrobot:greendao:3.1.1'
+    implementation 'org.greenrobot:greendao-generator:3.1.0'
+    //    compile 'org.greenrobot:greendao-generator-encryption:2.2.0'
+    implementation 'net.zetetic:android-database-sqlcipher:3.4.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+    implementation 'com.google.code.gson:gson:2.6.2'
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.github.markushi:circlebutton:1.1'
+    //DeviceFirmwareUpdateApi need dfu dependency
+    implementation 'no.nordicsemi.android:dfu:1.1.1'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    implementation files('libs/arcsoft_face.jar')
+}

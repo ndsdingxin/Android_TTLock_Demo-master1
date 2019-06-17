@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:paddingLeft="12dp"
+
+
+    android:orientation="vertical"
+    tools:context="com.example.ttlock.activity.AuthActivity"
+    android:background="@drawable/auth">
+
+    <LinearLayout
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="       "
+            android:textSize="16dp"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/white"/>
+
+
+        <EditText
+            android:id="@+id/auth_user"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:paddingTop="12dp"
+            android:textColorHint="@android:color/white"
+            android:textSize="15sp"
+            android:paddingLeft="16dp"
+            android:layout_marginLeft="23dp"
+
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="50dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="       "
+            android:textColor="@android:color/white"
+            android:textSize="16dp" />
+
+
+        <EditText
+            android:id="@+id/auth_pwd"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:textColorHint="@android:color/white"
+            android:inputType="textPassword"
+            android:textSize="15sp"
+
+            android:layout_marginLeft="25dp"
+            android:paddingLeft="16dp"/>
+
+    </LinearLayout>
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/auth"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center"
+
+        android:layout_marginTop="110dp"
+        android:gravity="center"
+        android:src="@drawable/login"
+        android:text="登录"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:cb_color="#99CC00"
+        app:cb_pressedRingWidth="8dip" />
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="access_token"
+            android:textSize="16dp"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/black"/>
+
+
+        <TextView
+            android:id="@+id/auth_access_token"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:hint="@string/words_access_token"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="openid"
+            android:textSize="16dp"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/black"/>
+
+
+        <TextView
+            android:id="@+id/auth_openid"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:hint="@string/words_open_id_info"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"/>
+
+    </LinearLayout>-->
+
+    <!--<Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:layout_marginTop="20dp"
+        android:onClick="register"
+        android:background="@android:color/holo_blue_bright"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"/>-->
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.VoiceVerifyActivity"
+    android:orientation="vertical"
+    android:background="@drawable/main">
+
+    <TextView
+        android:id="@+id/btn_register"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="系统设置"
+        android:gravity="center"
+        android:layout_gravity="right"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_random_verify"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:textColor="#FFFFFF"
+        android:text=""
+        android:textSize="60sp"
+        android:paddingLeft="10dp"
+        android:gravity="center"
+        android:layout_marginTop="270dp"/>
+
+    <Button
+        android:id="@+id/btn_verify"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="105dp"
+        android:background="@drawable/bg_special_disease_circle"
+        android:gravity="center"
+        android:text="声纹\n验证"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <!--<Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="声纹注册"
+        android:background="@android:color/holo_blue_bright"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"/>-->
+
+</LinearLayout>

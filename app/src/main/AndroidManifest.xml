@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ttlock">
+    <!-- 蓝牙权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- camera -->
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.localtest.VoiceToTest" />
+        <activity android:name=".activity.localtest.PcmDownloadActivity" />
+        <activity android:name=".activity.localtest.IsGeShiReal" />
+        <activity android:name=".activity.localtest.JianSuoActivity" />
+        <activity android:name=".activity.localtest.PiPeiAcitvity" />
+        <activity android:name=".activity.localtest.RegisterSingle" />
+        <activity android:name=".activity.localtest.RegistMany" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.UserOperateActivity" />
+        <activity android:name=".activity.VoiceRegisterActivity" /> <!-- 注册蓝牙服务 -->
+        <service android:name="com.ttlock.bl.sdk.service.BluetoothLeService" />
+        <service
+            android:name="com.ttlock.bl.sdk.service.DfuService"
+            android:exported="true" />
+
+        <activity android:name=".activity.BaseActivity" />
+        <activity
+            android:name=".activity.VoiceVerifyActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.FoundDeviceActivity" />
+        <activity android:name=".activity.BaseListActivity" />
+        <activity android:name=".activity.AuthActivity" />
+        <activity
+            android:name=".activity.OperateActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity.GetPasswordActivity" />
+        <activity android:name=".activity.GatewayActivity" />
+        <activity android:name=".activity.GatewayListActivity" />
+        <activity android:name=".activity.UnderGatewayLockList" />
+        <activity android:name=".activity.KeyboardPwdListActivity" />
+        <activity android:name=".activity.DeviceFirmwareUpdateActivity" />
+        <activity android:name=".activity.CameraMenuActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.ttlock.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

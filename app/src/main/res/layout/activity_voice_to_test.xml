@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.localtest.VoiceToTest">
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvwhitchvoicetotext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="语音到文字"
+            android:textAlignment="center"
+            android:textColor="#00ff00"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:id="@+id/tvconfirmvoicetotext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvtimervoicetotest"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#0000FF" />
+
+        <TextView
+            android:id="@+id/tvtagvoicetotest"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0dp"
+            android:background="#0000FF"
+            android:text="点击开始录音"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+</RelativeLayout>
